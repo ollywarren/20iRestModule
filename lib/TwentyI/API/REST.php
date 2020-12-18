@@ -41,15 +41,15 @@ class REST
         unset($options[CURLOPT_HTTPHEADER]);
 
         $full_url = preg_match('#^/+(.*)#', $url, $md) ?
-            (static::$serviceURL . $md[1]) :
-            (static::$serviceURL . $url);
+            (self::$serviceURL . $md[1]) :
+            (self::$serviceURL . $url);
 
         $full_user_agent = $this->userAgent ?
             "20iAPI/{$version} {$this->userAgent}" :
             "20iAPI/{$version}";
         $ch = curl_init($full_url);
         curl_setopt_array($ch, $options + [
-            CURLOPT_SSL_VERIFYPEER => static::$verifyServerCertificate,
+            CURLOPT_SSL_VERIFYPEER => self::$verifyServerCertificate,
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_HTTPHEADER => $original_headers + [
                 "Expect:",
