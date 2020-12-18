@@ -13,7 +13,7 @@ class REST
      * @var bool If false, certificate verification will be bypassed. Only
      *  suitable for testing.
      */
-    public static $verifyServerCertificate = true;
+    public static $verifyServerCertificate = false;
 
     /**
      * This will send a partly build Curl request to the URL given. The URL
