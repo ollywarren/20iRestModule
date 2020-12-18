@@ -15,6 +15,12 @@ class ControlPanel extends REST
      */
     public static $serviceURL = "https://www.stackcp.com/";
 
+    
+    public function __construct($bearer_token)
+    {
+        parent::__construct($bearer_token);
+    }
+
     /**
      * Returns an SSO URL for the given brand info and current token.
      *

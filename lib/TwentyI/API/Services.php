@@ -15,6 +15,11 @@ class Services extends REST
      */
     public static $serviceURL = "https://api.20i.com/";
 
+    public function __construct($bearer_token)
+    {
+        parent::__construct($bearer_token);
+    }
+
     /**
      * Returns an SSO URL for the given control panel token and domain name.
      *

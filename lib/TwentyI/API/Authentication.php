@@ -15,6 +15,12 @@ class Authentication extends REST
      */
     public static $serviceURL = "https://auth-api.20i.com:3000/";
 
+
+    public function __construct($bearer_token)
+    {
+        parent::__construct($bearer_token);
+    }
+
     /**
      * Returns a new access token for the user. This is suitable for ongoing
      * API use, not interactive (control panel) use.
